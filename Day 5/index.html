@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ello</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div id="time"></div>
+    </div>
+    <!-- <script src="script.js"></script> -->
+
+    <script>
+        function showTime() {
+            let time = new Date();
+            let hours = addZero(time.getHours());
+            let min = addZero(time.getMinutes());
+            let sec = addZero(time.getSeconds());
+
+            let currentTime = hours + " : " + min + " : " + sec;
+            document.getElementById("time").innerText = currentTime;
+            document.getElementById("time").textContent = currentTime;
+        }
+
+        function addZero(num) {
+            return num < 10 ? `0${num}` : num;
+        }
+
+        setInterval(showTime, 1000);
+    </script>
+</body>
+
+</html>
